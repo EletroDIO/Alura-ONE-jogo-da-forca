@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Plus+Jakarta+Sans:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Jogo da forca</title>
+    <link rel="icon" type="icon" href="img/alura-icone.png">
+</head>
+<body>
+    
+    <header class="titulo">
+        <a href="https://www.alura.com.br/" target="_blank" title="Home Alura">
+            <img src="img/alura.png" alt="logo colorido da Alura" width="30" id="logo"></a>
+        <h1 id="titulo">Jogo da Forca</h1>
+    </header>
+
+    <main class="principal">
+        
+        <!-- DIVs PARA EXIBIR O CONTEÚDO PRINCIPAL (A SER ALTERADO PELO JS) -->
+        <div class="tabuleiros tabuleiro1" id="apagar">
+            <button class="botoes botaoiniciar" onclick="start()">Iniciar jogo</button>
+        </div>
+        <div class="tabuleiros tabuleiro2">
+            <button class="botoes" onclick="criaCampo()">Adicionar nova palavra</button>
+        </div>
+        
+        <!-- DIV PARA EXIBIR AS LETRAS QUE NÃO ESTÃO CONTIDAS NA PALAVRA A SER DESCOBERTA -->
+        <div class="erros"></div>
+
+        <!-- DIV PARA EXIBIR OS BOTÕES "NOVO JOGO" E "DESISTIR"-->
+        <div class="novojogo"></div>
+        
+    </main>
+    <footer class="foote" >
+        <p class="corpyright" id="credito">&#169; Desenvolvido por Fabio Sousa estudante da ALURA - 2022 
+        <a href="https://www.linkedin.com/in/fabio-sousa-tr/" title="LinkedIn" target="_blank">
+            <img src="img/logo-linkedin.png" alt="Logo do LinkedIn" width="10" height="10" id="linkedin"></a>
+        <a href="https://github.com/EletroDIO" title="GitHub" target="_blank">
+            <img src="img/logo-github.png" alt="Logo do GitHub" width="10" height="10" id="github"></a>
+            <input  type="text" class="entrada"></p><!-- INPUT OCULTO QUE RECEBERÁ OS CARACTERES DIGITADOS -->
+  </footer>
+
+</body>
+<script src="js/start.js"></script>
+<script src="js/principal.js"></script>
+<script src="js/adicionar-palavra.js"></script>
+</html>

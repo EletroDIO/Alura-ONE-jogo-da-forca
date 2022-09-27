@@ -1,0 +1,297 @@
+:root {
+--cor-principal: #0a3871;
+--cor-secundaria: white;
+--cor-canvas: brown;
+--cor-titulo: #161495;
+}
+
+body { /* CONFIGURAÇÕES GERAIS DE ESTILO */
+    min-height: 100vh;
+    background: linear-gradient(#eff1fa, #e9ecf8, #609ed4);
+    font-family: 'Kanit', sans-serif;
+    font-weight: 400;
+    box-sizing: border-box; 
+    overflow: hidden; 
+    padding: 0;
+    margin: 0;
+}
+.titulo {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(164, 160, 160, 0.556);
+    height: 80px;
+}
+
+#logo { 
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+    
+}
+
+#titulo {
+    display: block;
+	font-family: 'Kanit', sans-serif;
+	color: var(--cor-titulo);
+	font-size: 36px;
+	letter-spacing: 3px;
+    background-color: none;
+}
+
+.principal { /* CONFIGURA O CONTEÚDO PRINCIPAL A SER MODIFICADO PELO JS */
+    background-color: none;
+    margin-top: 80px;
+    align-items: center; 
+}
+
+.tabuleiros { /* CONFUGURAÇÕES GERAIS DOS TABULEIROS */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: none;
+}
+.tabuleiro1 {
+    background-color: none;
+}
+.tabuleiro2 {
+    background-color: none ;
+}
+.botoes { /* CONFIGURAÇÕES GERAIS DOS BOTÕES DA TELA INICIAL */
+    display: flex;
+    border-radius: 30px;
+    width: 200px;
+    height: 40px;
+    border: var(--cor-principal) solid 2px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    background: var(--cor-principal);
+    color: white;
+    margin: 20px;
+    
+}
+
+.botoes:hover {
+    background-color: white; 
+    transition: 0.5s;
+    color: var(--cor-principal);
+    opacity: 0.9;
+}
+
+.botaocancelar { 
+    border: red solid 2px;
+    background: red;
+   
+}
+
+.botaocancelar:hover {
+    background-color: white; 
+    transition: 0.5s;
+    color: red;
+    opacity: 0.9;
+}
+
+.botaoiniciar { 
+    border: green solid 2px;
+    background: green;
+}
+
+.botaoiniciar:hover {
+    background-color: white; 
+    transition: 0.5s;
+    color: green;
+    opacity: 0.9;
+}
+
+.sublinhado { /* CONFIGURA A DIV QUE VAI MOSTRAR O SUBLINHADO E AS LETRAS (ESTAS ÚLTIMAS SOMENTE SERÃO MOSTRADAS SE O JOGADOR ACERTAR) */
+    width: 30px;
+    height: 30px;
+    border-bottom: solid 5px var(--cor-titulo);
+    display: inline-block;
+    margin: 0 3px;
+    text-align: center;
+    background-color: none;
+}
+
+
+.linhas { /* CONFIGURA A DIV INTEIRA QUE VAI RECEBER AS LETRAS DENTRO DA DIV COM A CLASS "SUBLINHADO" */
+    color: gray;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    background-color: none;
+    margin-bottom: 0
+}
+
+.esconder { /* ESTILO QUE TORNA AS LETRAS DA PALAVRA A SER DESVENDADA ESCONDIDAS POR PADRÃO E NÃO PERMITE SELECIONA-LAS COPIA-LAS COM O MOUSE */
+    
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none;    
+    -khtml-user-select: none;    
+    -moz-user-select: none;       
+    -ms-user-select: none;        
+    user-select: none; 
+    color: transparent;         
+    
+}
+
+.entrada{ /* TORNA O INPUT QUE VAI RECEBER AS LETRAS DIGITADAS, INVISIVEL */
+    background-color: transparent;
+    width: 0;
+    height: 0;
+    border: none;
+    outline: none;
+}
+
+.mensagem { /* CONFIGURA TEXTO DE VITÓRIA OU DERROTA */
+    width: 100%;
+    text-align: center;
+    font-size: 2vw;
+    margin: 10px auto;
+
+}
+
+.erros { /* CONFIGURA LETRAS QUE NÃO ESTÃO CONTIDAS NA PALAVRA A SER DESVENDADA */
+    height: 30px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: red;
+    font-weight: bold;
+    background-color: none;
+    margin-bottom: 10px;
+   
+}
+
+.novojogo { /* CONFIGURA A DIV QUE CONTÉM OS BOTÕES DE "NOVO JOGO" E "DESISTIR" */
+    display: none;
+    height: 60px;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: none;
+}
+
+textarea { /* CONFIGURA O TEXTAREA QUE VAI RECEBER A NOVA PALAVRA ADICIONADA PELO JOGADOR */
+    border: none;
+    background-color: var(--cor-secundaria);
+    width: 400px;
+    height: 200px;
+    font-size: 22px;
+    color: var(--cor-titulo);
+    outline: none;
+    resize: none;
+    margin: 5px;
+}
+
+textarea::placeholder { /* CONFIGURA A COR DO PLACEHOLDER DO TEXTAREA */
+    color: rgba(4, 54, 103, 0.496);
+}
+
+.aviso { /* CONFIGURAÇÕES GERAIS DA DIV QUE VAI RECEBER O AVISO DE "NÚMERO MAXIMO DE LETRAS", ENTRE O TEXTAREA E OS BOTÕES */
+    display: flex;
+    margin-left: 30px;
+    align-items: center;
+    width: 100%;
+    height: 20px;
+    background-color: none;
+}
+
+.aviso p { /* CONFIGURA SOMENTE O TEXTO DA DIV AVISO */
+    font-size: 12px;
+    margin-left: 3px;
+}
+
+
+footer {  /* CONFIGURA AREA DO RODAPÉ */
+    background: rgba(164, 160, 160, 0.556);
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    bottom: 0;
+    position: absolute;
+}
+
+footer img{ /* CONFIGURA ICONES NO RODAPÉ */
+	width: 16px;
+    height: auto;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+/*
+@media (max-width: 768px) /* AJUSTA A TELA À RESOLUÇÃO DE TABLET 
+{
+    body {
+        overflow: scroll;
+    }
+    canvas {
+        margin: 120px 0 0 0;
+        width: 300px;
+    }
+    
+    .novojogo{
+        width: 75vw;
+    }
+
+    textarea {
+        width: 100%;
+    }
+
+    .botao {
+        width: 100%;
+    }
+}
+*/
+@media (max-width: 330px) /* AJUSTA A TELA À RESOLUÇÃO DE CELULAR */ {
+ 
+    #titulo, .logo {
+        font-size: 30px;
+    }
+
+    textarea {
+        max-width: 300px;
+        max-height: 150px;
+    }
+
+    textarea::placeholder {
+        font-size: 18px;
+    }
+    
+    .sublinhado {
+        width: 18px;
+    }
+
+    .erros {
+        margin-bottom: 0;
+        height: 18px;
+    }
+
+    footer p {
+        margin: 3px;
+        background-color: none;
+    }
+
+    .forca {
+        height: 160px;
+    }
+
+    .botoes {
+        width: 160px;
+        margin: 5px;
+    }
+
+}
+
+.forca { /* CONFIGURA AREA DO DESENHO DA FORCA */
+
+    background-color: none;
+    width: auto;
+    height: 260px;
+  
+}
