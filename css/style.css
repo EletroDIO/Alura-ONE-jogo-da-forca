@@ -224,30 +224,7 @@ footer img{ /* CONFIGURA ICONES NO RODAPÉ */
     margin-left: 10px;
     vertical-align: middle;
 }
-/*
-@media (max-width: 768px) /* AJUSTA A TELA À RESOLUÇÃO DE TABLET 
-{
-    body {
-        overflow: scroll;
-    }
-    canvas {
-        margin: 120px 0 0 0;
-        width: 300px;
-    }
-    
-    .novojogo{
-        width: 75vw;
-    }
 
-    textarea {
-        width: 100%;
-    }
-
-    .botao {
-        width: 100%;
-    }
-}
-*/
 @media (max-width: 330px) /* AJUSTA A TELA À RESOLUÇÃO DE CELULAR */ {
  
     #titulo, .logo {
@@ -255,7 +232,7 @@ footer img{ /* CONFIGURA ICONES NO RODAPÉ */
     }
 
     textarea {
-        max-width: 300px;
+        max-width: 280px;
         max-height: 150px;
     }
 
@@ -271,6 +248,9 @@ footer img{ /* CONFIGURA ICONES NO RODAPÉ */
         margin-bottom: 0;
         height: 18px;
     }
+    footer {
+        position: none;
+    }
 
     footer p {
         margin: 3px;
@@ -278,14 +258,17 @@ footer img{ /* CONFIGURA ICONES NO RODAPÉ */
     }
 
     .forca {
-        height: 160px;
+        height: 10vh;
+        background-color: aqua;
     }
 
     .botoes {
         width: 160px;
         margin: 5px;
     }
-
+    .mensagem {
+        font-size: 5vw;
+    }
 }
 
 .forca { /* CONFIGURA AREA DO DESENHO DA FORCA */
