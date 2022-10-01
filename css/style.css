@@ -229,7 +229,15 @@ footer img{ /* CONFIGURA ICONES NO RODAPÉ */
     
 }
 
-@media (max-width: 370px) /* AJUSTA A TELA À RESOLUÇÃO DE CELULAR */ {
+.forca { /* CONFIGURA AREA DO DESENHO DA FORCA */
+
+    background-color: none;
+    width: auto;
+    height: 200px;
+  
+}
+
+@media (max-width: 380px) /* AJUSTA A TELA À RESOLUÇÃO DE CELULAR */ {
  
 
     #titulo, .logo {
@@ -265,7 +273,8 @@ footer img{ /* CONFIGURA ICONES NO RODAPÉ */
     }
 
     .forca {
-        height: 9vh;
+        height: 160px;
+        width: auto;
         background-color: none;
     }
 
@@ -278,10 +287,3 @@ footer img{ /* CONFIGURA ICONES NO RODAPÉ */
     }
 }
 
-.forca { /* CONFIGURA AREA DO DESENHO DA FORCA */
-
-    background-color: none;
-    width: auto;
-    height: 260px;
-  
-}
