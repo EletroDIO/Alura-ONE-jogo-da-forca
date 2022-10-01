@@ -240,10 +240,13 @@ footer img{ /* CONFIGURA ICONES NO RODAPÉ */
 @media screen and (max-width: 430px) /* AJUSTA A TELA À RESOLUÇÃO DE CELULAR */ {
  
 
-    #titulo, .logo {
-        font-size: 30px;
+    #titulo {
+        font-size: 28px;
+        height: 50px;
     }
-
+    #logo {
+        width: 50px;
+    }
     textarea {
        
         max-width: 260px;
@@ -263,7 +266,7 @@ footer img{ /* CONFIGURA ICONES NO RODAPÉ */
         height: 18px;
     }
     footer {
-        position: none;
+        position: fixed;
         font-size: 10px;
     }
 
@@ -273,13 +276,13 @@ footer img{ /* CONFIGURA ICONES NO RODAPÉ */
     }
 
     .forca {
-        height: 160px;
+        height: 150px;
         width: auto;
         background-color: none;
     }
 
     .botoes {
-        width: 150px;
+        width: 160px;
         margin: 5px;
     }
     .mensagem {

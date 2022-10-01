@@ -187,7 +187,7 @@ function start(){
     caracteres = [];
     linhas = document.querySelector(".linhas");
     // APAGA OS CONTEÚDOS E ADICIONA OS NOVOS REFERENTES AO INICIO DO JOGO
-    principal.style.marginTop ="5px";
+    principal.style.marginTop ="0px";
     tabuleiro1.innerHTML = "";
     tabuleiro2.innerHTML = "";
     mostraErros.innerHTML = "";
