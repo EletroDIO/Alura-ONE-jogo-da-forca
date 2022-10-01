@@ -1,4 +1,4 @@
-var palavras = ["xilofone", "saudade", "vertiginoso", "intrigante", "poesia", "alegria", "luz", "perfeito", "internet", "amora", "azulejo", "quartzo", "torpor", "crespo" ];
+var palavras = ["xilofone", "saudade", "vertigem", "intrigante", "poesia", "alegria", "luz", "perfeito", "internet", "amora", "azulejo", "quartzo", "torpor", "crespo" ];
 var numeroDeLetras = "";
 var palavraSorteio = "";
 var tela = document.querySelector("html");
@@ -168,3 +168,102 @@ function novoJogo () {
     console.log(palavraSorteadas.join(" / "));
 }
 
+//*********************************************************************************// 
+
+var entrada = document.querySelector(".entrada");
+var tabuleiro1 = document.querySelector(".tabuleiro1");
+var tabuleiro2 = document.querySelector(".tabuleiro2");
+var principal = document.querySelector(".principal");
+
+entrada.disabled = true; // DESABILITA O INPUT COM A CLASS "ENTRADA"
+
+function start(){
+  
+    // RESETA AS VARIÁVEIS
+    entrada.disabled = false; // HABILITA O INPUT COM A CLASS "ENTRADA"
+    erros = 0;
+    acertos = 0;
+    i = Math.floor(Math.random() * palavras.length);
+    caracteres = [];
+    linhas = document.querySelector(".linhas");
+    // APAGA OS CONTEÚDOS E ADICIONA OS NOVOS REFERENTES AO INICIO DO JOGO
+    principal.style.marginTop ="5px";
+    tabuleiro1.innerHTML = "";
+    tabuleiro2.innerHTML = "";
+    mostraErros.innerHTML = "";
+    mostraErros.style.display = "flex"; 
+    novo.innerHTML = "";
+    novo.style.display = "flex";
+    tabuleiro1.innerHTML = `<canvas class="forca" width="400" height="400"></canvas>`;
+    tabuleiro2.innerHTML = `<div class="linhas"></div>`
+
+    novo.innerHTML = '<button class="botoes" onclick="start()">Novo jogo</button>';
+    novo.innerHTML += '<button id="bntDesistir" class="botoes botaocancelar" onclick="cancelar()">Desistir</button>';
+    
+    sorteia();
+    desenhaForca();
+
+}
+
+//*******************************************************************************//
+
+// CRIA O TEXTAREA PARA O JOGADOR ADICIONAR NOVA PALAVRA AO JOGO
+function criaCampo() {
+    // APAGA OS CONTEÚDOS E ADICIONA OS NOVOS 
+    principal.style.marginTop ="20px";
+
+    tabuleiro1.innerHTML = "";
+    tabuleiro2.innerHTML = "";
+
+    tabuleiro1.innerHTML = '<textarea maxlength="10" name="msn" id="campo" placeholder="Digite uma palavra."></textarea>';
+    tabuleiro2.innerHTML = '<div class="aviso"><img src="img/aviso.png" alt="icone de informação" height="12px"><p>Máx. de 10 letras.</p></div>';
+   
+    novo.style.display = "flex";
+    novo.innerHTML = '<button class="botoes" onclick="adicionaPalavra()">Salvar</button>';
+    if (palavras.length == 0) {
+       novo.innerHTML += '<button id="bntDesistir" class="botoes botaocancelar" onclick="cancelar()">Cancelar</button>';
+    } else {
+        novo.innerHTML += '<button class="botoes botaoiniciar" id="iniciarjogo" onclick="start()">Iniciar jogo</button>';
+    }
+
+    campo.focus();
+    inputverifica()
+}
+// CANCELA E ATUALIZA A PÁGINA
+function cancelar() {
+    location.reload();
+}
+
+function adicionaPalavra() {// ADICIONA NOVA PALAVRA AO ARRAY "PALAVRAS" QUE ESTÁ NO "PRINCIPAL.JS"
+
+    var campo = document.querySelector("#campo");
+    // EXIBE ALERTA SE O TEXTAREA ESTIVER VAZIO AO CLICAR NO BOTÃO "SALVAR E COMEÇAR"
+    if(campo.value.length == 0) {
+            if (palavras.length == 0) {
+        alert("Adicione uma palavra ou pressione em Cancelar.")
+            }
+        else{ alert("Adicione uma palavra ou pressione em Iniciar jogo.")}
+        campo.focus();
+    } else { // ADICIONA A NOVA PALAVRA AO JOGO
+       palavras.push(campo.value.toLowerCase());
+       document.getElementById("campo").placeholder ="Adicione mais palavras ou Inicie o jogo.";
+       novo.innerHTML = '<button class="botoes" onclick="adicionaPalavra()">Salvar</button>';
+       novo.innerHTML += '<button class="botoes botaoiniciar" onclick="start()">Iniciar jogo</button>';
+       campo.value = '';
+       campo.focus();
+    }
+    console.log(palavras);
+}
+
+    function inputverifica() { //PERMITE SOMENTE LETRAS NO INPUT. 
+
+       var inputPalavra = document.querySelector("#campo");
+           inputPalavra.addEventListener("keypress", function (e) {
+            var keyCode = e.keyCode ? e.keyCode : e.which;
+    
+            if (keyCode < 65 || keyCode > 135 || (keyCode > 90 && keyCode < 97)) {    
+                e.preventDefault();
+            }
+        });
+    }
+    

@@ -181,7 +181,7 @@ body { /* CONFIGURAÇÕES GERAIS DE ESTILO */
 textarea { /* CONFIGURA O TEXTAREA QUE VAI RECEBER A NOVA PALAVRA ADICIONADA PELO JOGADOR */
     border: none;
     background-color: var(--cor-secundaria);
-    width: 400px;
+    width: 300px;
     height: 200px;
     font-size: 22px;
     color: var(--cor-titulo);
@@ -196,44 +196,50 @@ textarea::placeholder { /* CONFIGURA A COR DO PLACEHOLDER DO TEXTAREA */
 
 .aviso { /* CONFIGURAÇÕES GERAIS DA DIV QUE VAI RECEBER O AVISO DE "NÚMERO MAXIMO DE LETRAS", ENTRE O TEXTAREA E OS BOTÕES */
     display: flex;
-    margin-left: 30px;
+    justify-content: flex-start;
     align-items: center;
-    width: 100%;
-    height: 20px;
+    height: 15px;
+    width: 70%;
     background-color: none;
 }
 
 .aviso p { /* CONFIGURA SOMENTE O TEXTO DA DIV AVISO */
     font-size: 12px;
     margin-left: 3px;
+    padding: 0;
 }
 
 
 footer {  /* CONFIGURA AREA DO RODAPÉ */
     background: rgba(164, 160, 160, 0.556);
+    display: flex;
+    justify-content: center;
     width: 100%;
-    text-align: center;
+    align-items: center;
     font-size: 12px;
     bottom: 0;
     position: absolute;
+
 }
 
 footer img{ /* CONFIGURA ICONES NO RODAPÉ */
-	width: 16px;
+	width: 14px;
     height: auto;
-    margin-left: 10px;
-    vertical-align: middle;
+    margin-left: 7px;
+    
 }
 
-@media (max-width: 330px) /* AJUSTA A TELA À RESOLUÇÃO DE CELULAR */ {
+@media (max-width: 370px) /* AJUSTA A TELA À RESOLUÇÃO DE CELULAR */ {
  
+
     #titulo, .logo {
         font-size: 30px;
     }
 
     textarea {
-        max-width: 280px;
-        max-height: 150px;
+       
+        max-width: 260px;
+        max-height: 120px;
     }
 
     textarea::placeholder {
@@ -250,20 +256,21 @@ footer img{ /* CONFIGURA ICONES NO RODAPÉ */
     }
     footer {
         position: none;
+        font-size: 10px;
     }
 
     footer p {
-        margin: 3px;
+        text-align: center;
         background-color: none;
     }
 
     .forca {
-        height: 10vh;
-        background-color: aqua;
+        height: 9vh;
+        background-color: none;
     }
 
     .botoes {
-        width: 160px;
+        width: 150px;
         margin: 5px;
     }
     .mensagem {
