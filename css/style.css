@@ -237,7 +237,7 @@ footer img{ /* CONFIGURA ICONES NO RODAPÉ */
   
 }
 
-@media (max-width: 380px) /* AJUSTA A TELA À RESOLUÇÃO DE CELULAR */ {
+@media screen and (max-width: 430px) /* AJUSTA A TELA À RESOLUÇÃO DE CELULAR */ {
  
 
     #titulo, .logo {
