@@ -237,6 +237,56 @@ footer img{ /* CONFIGURA ICONES NO RODAPÉ */
   
 }
 
+.teclado {
+    display: none;
+    flex-direction: column;
+    position: relative;
+    top: auto;
+    align-items: center;
+    margin-top: 5px;
+    
+}
+
+.linha-1, .linha-2, .linha-3 {
+    margin: 3px;
+    
+}
+
+.botao-teclado {
+    font-size: 12px;
+    width: 32px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    padding: 2px;
+    margin: 0 3px;
+    border-radius: 5px;
+    background: transparent;
+    border: var(--cor-principal) solid 1px;
+    color: var(--cor-principal);
+    transition: all 0.2s ease;
+}
+
+.botao-teclado:hover {
+   background: grey;
+   transform: scale(1.2);
+   
+}
+.btnErro {
+    color: whitesmoke;
+    background-color: red;
+    opacity: 0.7;
+}
+
+.btnAcerto {
+    color: whitesmoke;
+    background-color: green;
+    opacity: 0.7;
+}
+.disabled {
+    pointer-events: none;
+  }
+
 @media screen and (max-width: 430px) /* AJUSTA A TELA À RESOLUÇÃO DE CELULAR */ {
  
 
@@ -287,6 +337,13 @@ footer img{ /* CONFIGURA ICONES NO RODAPÉ */
     }
     .mensagem {
         font-size: 5vw;
+    }
+
+    .botao-teclado {
+        font-size: 10px;
+        width: 25px;
+        padding: 1px;
+        margin: 0 2px;
     }
 }
 
